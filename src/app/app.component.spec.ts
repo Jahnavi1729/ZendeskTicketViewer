@@ -1,16 +1,22 @@
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        NgxPaginationModule
       ],
       declarations: [
         AppComponent
       ],
+      providers:[
+        HttpClient, HttpHandler
+      ]
     }).compileComponents();
   });
 
@@ -23,13 +29,7 @@ describe('AppComponent', () => {
   it(`should have as title 'ZendeskTicketViewer'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ZendeskTicketViewer');
+    expect(app.title).toEqual('Ticket Viewer');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('ZendeskTicketViewer app is running!');
-  });
 });
