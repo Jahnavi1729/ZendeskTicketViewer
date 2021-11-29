@@ -1,26 +1,33 @@
-# ZendeskTicketViewer
+Zendesk-Coding-Challenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
+## Installation & Usage
+-> Node
+https://nodejs.org/en/download/ 
 
-## Development server
+-> Angular CLI
+https://github.com/angular/angular-cli
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+-> Git
+-> VisualStudioCode (or any other editor)
 
-## Code scaffolding
+## Step 1: Setting up the project locally
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Clone the repo to your local machine, or, alternatively, download the project as a zip file and extract it to your local machine.
+2. Open the project folder in VisualStudioCode or any other editor
+3. From the root of the project, run  npm install in one of the terminals
+4. Run npm install -g json-server
 
-## Build
+## Step 2: Starting the backend server
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+4. To start the server, in the other terminal, run json-server --watch tickets.json You should see a console message saying that the server is running on  http://localhost:3000 and  Resources http://localhost:3000/tickets
 
-## Running unit tests
+## Step 3: Start the Front end server
+5. From the other terminal run either ng serve or npm start. This should start the angular  server on an available port (most likely localhost:4200)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Step 4: Starting the app
+6. In the browser of your choice navigate to http://localhost:4200/
+7. Enjoy some tickets.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
 ## Further help
 

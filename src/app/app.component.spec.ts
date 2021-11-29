@@ -29,7 +29,7 @@ describe('AppComponent', () => {
   it(`should have as title 'ZendeskTicketViewer'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Ticket Viewer');
+    expect(app.title).toEqual('Zendesk Ticket Viewer');
   });
 
 });

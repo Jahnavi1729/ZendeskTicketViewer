@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {zenapi} from './services/zenapi.service';
 import { TicketService } from './ticket.service';
 import { tickets } from './tickets';
 @Component({
@@ -10,23 +9,14 @@ import { tickets } from './tickets';
 
 
 export class AppComponent {
-  title = 'Ticket Viewer';
+  title = 'Zendesk Ticket Viewer';
   data:any = []
   totalLength:any;
   page:number = 1;
-  constructor(private tick:TicketService){
+  showMe:boolean = false;
+  constructor(private tick:TicketService){}
 
-
-    
-    // this.user.getcomments().subscribe(data=>{     
-    //   this.data=data;
-    //   this.totalLength =  data.length;
-    //   console.log(this.totalLength)
-    // })
-   
-  }
-
-  columns = ["requester_id","assignee_id","subject","description"];
+  columns = ["Tickets","Description"];
   
   tickets: tickets[] = [];
 
@@ -42,6 +32,10 @@ export class AppComponent {
         console.log("Error Occured: "+error);
       }
     )
+  }
+
+  toogleTag(){
+    this.showMe = !this.showMe
   }
   
 }

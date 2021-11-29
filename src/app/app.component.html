@@ -1,24 +1,5 @@
 
-<span> {{title}} </span>
-
-<h1> API CALL</h1>
-<!-- <div class="text-center">
-  <table>
-    <tr>
-      <td>PostId</td>
-      <td>Id</td>
-      <td>Name</td>
-      <td>Completed</td>
-    </tr>
-    <tr *ngFor="let items of data | paginate:{itemsPerPage: 25, currentPage: page,
-      totalItems: totalLength}"  >
-      <td>{{items.url}}</td>
-      <td>{{items.id}}</td>
-      <td>{{items.external_id}}</td>  
-      <td>{{items.via}}</td>    
-    </tr>
-  </table>
-</div> -->
+<h2> {{title}} </h2>
 
 <table>
   <tr>
@@ -29,10 +10,11 @@
   </tr>
   <tr *ngFor="let ticktet of tickets | paginate:{itemsPerPage: 25, currentPage: page,
     totalItems: totalLength}">
-    <td>{{ticktet.requester_id}}</td>
-    <td>{{ticktet.assignee_id}}</td>
     <td> {{ticktet.subject}}</td>
-    <td> {{ticktet.description}} </td>
+    <td>
+      <button (click)="toogleTag()">Show Descriptions</button>
+      <p *ngIf="showMe"> {{ticktet.description}}</p>
+    </td>
   </tr>
 </table>
 
